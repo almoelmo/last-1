@@ -1,0 +1,13 @@
+// import java.lang.String;без нее работает ошибки нет) у меня винда)
+public class Main {
+    public static void main(String[] args) {
+        byte num = 127;
+        float num_2 = 44.55f;
+        char sym = 'R';
+        boolean isTrue = false;
+        double num_3 = 222.432523525;
+        int num_1 = 23234353;
+        String str = "hello world";
+        System.out.print(str);
+    }
+}

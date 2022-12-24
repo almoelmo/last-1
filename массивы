@@ -1,0 +1,130 @@
+//1)Написать своими словами как вы понимаете, что такое массивы
+//import java.util.Scanner;
+////массивы это набор элементов которые хранятся в последователности в памяти и у каждого из этих элементов есть свой индекс(свой порядковый номер)
+//// пример элемента массива
+//public class Main {
+//    private static Scanner in = new Scanner(System.in);
+//    public static void main(String[] args ) {
+//        int[] mas = new int [8];
+//        for (int i = 0; i < 8; i++)
+//        {
+//            mas[i] = in.nextInt();
+//        }
+//        for (int i = 0; i < 8; i++)
+//        {
+//            System.out.println(mas[i] + " " );
+//        }
+//
+//    }
+//}
+
+//2)Привести пример задачи, которую бы вы скорее всего или точно решили при помощи массивов
+// пример задачи которую можно решить с помощью массивов условия:
+// в ведомости указаны часы каждому сотруднику фирмы за месяц.Определить общие часы отработаных по ведомости часов
+// определить максимальное и минимальное время в фирме.Известно что в фирме 20 человек
+import java.util.Arrays;
+class  TIME {
+    public static void main(String[] args) {
+        int TIME[] = new int[20];
+        int sum =0;
+        int min = 10000;
+        int max = 0;
+        TIME[0] = 500;
+        for (int i = 0; i < TIME.length; i++) {
+            TIME[i] = (int) (Math.random() * 500)+200;
+            sum += TIME[i];
+            if (TIME[i]<min ) {min = TIME[i];}
+            if (TIME[i]>max) {max = TIME[i];}
+
+        }
+        System.out.println(Arrays.toString(TIME));
+        System.out.println("итого" +sum);
+        System.out.println("минимум часов" +min);
+        System.out.println("максимальные часы" +max);
+    }
+}
+//3)Какой из способов предпочтительней в Java? + Приведите пример из кода, как их создать
+//если я правильно понял данный вопрос
+// 1)Вывод массива в Java
+//int[] intArray = { 1, 2, 3, 4, 5 };
+//String intArrayString = Arrays.toString(intArray);
+//// print directly will print reference value
+//System.out.println(intArray);
+//// [I@7150bd4d
+//System.out.println(intArrayString);
+//// [1, 2, 3, 4, 5]
+
+// 2)Создание ArrayList из массива
+//String[] stringArray = { "a", "b", "c", "d", "e" };
+// ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(stringArray));
+// System.out.println(arrayList);
+// [a, b, c, d, e]
+//
+// 3)Проверка массива на наличие конкретного значения
+// String[] stringArray = { "a", "b", "c", "d", "e" };
+//boolean b = Arrays.asList(stringArray).contains("a");
+//System.out.println(b);
+//// true
+
+// 4)Объединение двух массивов
+// int[] intArray = { 1, 2, 3, 4, 5 };
+//int[] intArray2 = { 6, 7, 8, 9, 10 };
+//// Apache Commons Lang library
+//int[] combinedIntArray = ArrayUtils.addAll(intArray, intArray2);
+
+// 5)Объявление массива в одной строке
+// method(new String[]{"a", "b", "c", "d", "e"});
+
+// 6)Объединение элементов массива в строку
+// // containing the provided list of elements
+//// Apache common lang
+//String j = StringUtils.join(new String[] { "a", "b", "c" }, ", ");
+//System.out.println(j);
+//// a, b, c
+
+// 7)Преобразование ArrayList в массив
+// String[] stringArray = { "a", "b", "c", "d", "e" };
+//ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(stringArray));
+//String[] stringArr = new String[arrayList.size()];
+//arrayList.toArray(stringArr);
+//for (String s : stringArr)
+//	System.out.println(s);
+
+// 8)Преобразование массива во множество (Set)
+// Set<String> set = new HashSet<String>(Arrays.asList(stringArray));
+//System.out.println(set);
+////[d, e, b, c, a]
+
+// 9)Возврат массива с элементами в обратном порядке
+// int[] intArray = { 1, 2, 3, 4, 5 };
+//ArrayUtils.reverse(intArray);
+//System.out.println(Arrays.toString(intArray));
+////[5, 4, 3, 2, 1]
+
+// 10)Удаление элемента из массива
+//int[] intArray = { 1, 2, 3, 4, 5 };
+//int[] removed = ArrayUtils.removeElement(intArray, 3);//create a new array
+//System.out.println(Arrays.toString(removed));
+
+//4)Напишите какие массивы бывают и какие способы их создания существуют
+//Одномерными и многомерными.
+//Классический массив — одномерный,то есть выглядит как ряд элементов.
+//массив может быть и многомерным, чаще всего двумерным
+//тогда он состоит из нескольких рядов, расположенных друг под другом
+//int[] twoDimArray; //одномерный  массив
+//int[][] twoDimArray; //двумерный массив
+//String[][][] threeDimArray; //трёхмерный массив
+//double[][][][][] fiveDimArray; // пятимерный массив
+//twoDimArray[0][0] = 5;//
+// twoDimArray[0][1] = 7; //
+// twoDimArray[0][2]  = 3;
+// twoDimArray[0][3] = 17;
+// twoDimArray[1][0] = 7;
+// twoDimArray[1][1] = 0;
+// twoDimArray[1][2] = 1;
+// twoDimArray[1][3] = 12;
+// twoDimArray[2][0] = 8;
+// twoDimArray[2][1] = 1;
+// twoDimArray[2][2] = 2;
+// twoDimArray[2][3] = 3;
+//Этот массив имеет 3 строки и 4 столбца. Размер прямоугольного двумерного массива

@@ -1,0 +1,65 @@
+public class Main {
+        public static void main(String[] args) {
+            String[] seasons = {"зима", "весна", "лето", "осень"};
+            String[] months = {"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декарь"};
+            String[] days = {"понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"};
+            int[] numbersOfMonth = new int[31];
+            for (int i = 0; i < 31; i++) {
+                numbersOfMonth[i] = i + 1;
+            }
+
+            System.out.println(seasons); // ссылка на массив seasons
+            System.out.println(seasons[1]); // второй элемент массива seasons
+
+            for (int i = 0; i < seasons.length; i++) {
+                System.out.print(seasons[i] + " ");
+            }
+            System.out.println();
+            for (int i = 0; i < months.length; i++) {
+                System.out.print(months[i] + " ");
+            }
+            System.out.println();
+            for (int i = 0; i < days.length; i++) {
+                System.out.print(days[i] + " ");
+            }
+            System.out.println();
+            for (int i = 0; i < numbersOfMonth.length; i++) {
+                System.out.print(numbersOfMonth[i] + " ");
+            }
+            System.out.println();
+
+            String[][] calendar = new String[12][32];
+            // calendar.length - длина столбцов(кол-во строчек)
+            // calendar[0].length - длина строки(кол-во столбцов)
+            for (int i = 0; i < calendar.length; i++) {
+                calendar[i][0] = months[i];
+            }
+            for (int i = 0; i < calendar.length; i++) {
+                int length = 0;
+                if (i % 2 == 0){
+                    length = 31;
+                }else{
+                    if (i == 1){
+                        length = 28;
+                    }else{
+                        length = 30;
+                    }
+                }
+                for (int j = 1; j <= length; j++) {
+                    calendar[i][j] = Integer.toString(j);
+                }
+            }
+            for (int i = 0; i < calendar.length; i++) {
+                for (int j = 0; j < calendar[i].length; j++) {
+                    if (calendar[i][j] == null){
+                        System.out.print("");
+                    }else{
+                        System.out.print(calendar[i][j] + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+
+
+}
